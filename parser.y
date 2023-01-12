@@ -1,6 +1,10 @@
 %{
 int yylex();
 #include "q3.h"
+#include <stdio.h>
+#ifdef YYDEBUG
+  yydebug = 1;
+#endif
 %}
 
 %union {
