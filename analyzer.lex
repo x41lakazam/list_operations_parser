@@ -11,7 +11,7 @@ delim [ \t]
 %%
 
 delim 		{}
-integer 	{return NUMBER;}
+integer 	{yylval=atoi(yytext); return NUMBER;}
 "max" 		{return MAX;}
 "sum" 		{return SUM;}
 "greater" 	{return GREATER;}

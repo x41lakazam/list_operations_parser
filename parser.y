@@ -25,11 +25,12 @@ int yylex();
 
 Input:
 
-     | Input Line
+     |Input Line
 ;
 
 Line:
-    Item END {printf("Result: %d\n", $1); }
+    END
+    |Item END {printf("Result: %d\n", $1); }
 ;
 
 List:
