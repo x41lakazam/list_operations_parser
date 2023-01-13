@@ -19,12 +19,14 @@ int yylex();
 %type <list> Itemlist List
 %type <val> Item NUMBER
 
+%define parse.error verbose
+
 %start Input
 
 %%
 
 Input:
-
+	/* Empty */
      |Input Line
 ;
 

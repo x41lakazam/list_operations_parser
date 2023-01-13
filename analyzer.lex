@@ -6,23 +6,23 @@
 
 digit [0-9]
 integer {digit}+
-delim [ \t]
+delim [ \t\n]
 
 %%
 
 delim 		{}
-integer 	{yylval=atoi(yytext); return NUMBER;}
+integer 	{yylval.val=atoi(yytext); return NUMBER;}
 "max" 		{return MAX;}
 "sum" 		{return SUM;}
 "greater" 	{return GREATER;}
 "cons"	 	{return CONS;}
 "tail" 		{return TAIL;}
-"[" 		{return RIGHTSBKT;}
-"]" 		{return LEFTSBKT;}
+"[" 		{return LEFTSBKT;}
+"]" 		{return RIGHTSBKT;}
 "(" 		{return LEFTBKT;}
 ")" 		{return RIGHTBKT;}
 "," 		{return COMMA;}
-"\n" 		{return END;}
+";" 		{return END;}
 
 
 
